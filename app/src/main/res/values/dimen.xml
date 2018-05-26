@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="btn_login_margin">25dp</dimen>
+    <dimen name="btn_login_height">65dp</dimen>
+    <dimen name="btn_login_font">16sp</dimen>
+
+    <dimen name="input_reg_margin">6dp</dimen>
+
+    <dimen name="tVw_reg_margin">50dp</dimen>
+    <dimen name="tVw_reg_height">50dp</dimen>
+    <dimen name="tVw_reg_font">16sp</dimen>
+    <dimen name="btn_height1">60dp</dimen>
+    <dimen name="btn_width1">115dp</dimen>
+
+
+
+</resources>

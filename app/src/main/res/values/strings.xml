@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Login / Register</string>
+    <string name="btn_login_register">Register </string>
+    <string name="btn_login_facebook">Register With Facebook</string>
+    <string name="btn_login_google">Register With Google</string>
+    <string name="reg_act_name">Sign Up</string>
+    <string name="title_activity_matches_list">Matches</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Saravanan</string>
+    <string name="nav_header_subtitle">saranchinnadurai@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_list">ListActivity</string>
+
+
+</resources>
