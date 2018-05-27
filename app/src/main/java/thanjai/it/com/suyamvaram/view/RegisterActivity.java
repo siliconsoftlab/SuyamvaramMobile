@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -41,15 +40,8 @@ public class RegisterActivity extends AppCompatActivity implements RegisterResul
 
     @Override
     public void onRegisterFailed(String Messgae) {
-        Toast.makeText(this, "Messgae "+Messgae, Toast.LENGTH_LONG).show();
-        Log.e(TAG, "!!!!!!!!!!!!!!!!!! "+Messgae);
-        Log.i(TAG, "!!!!!!!!!!!!!!!!!! "+Messgae);
-        Log.d(TAG, "!!!!!!!!!!!!!!!!!! "+Messgae);
-        Log.w(TAG, "!!!!!!!!!!!!!!!!!! "+Messgae);
-
-
+        Toast.makeText(this, ""+Messgae, Toast.LENGTH_LONG).show();
     }
-
     @Override
     public void onRegisterProgress() {
 

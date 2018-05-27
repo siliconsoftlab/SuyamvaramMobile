@@ -44,32 +44,37 @@ public class RegisterViewModel extends BaseViewModel {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "********************* onRegisterSuccess ");
-                Log.i(TAG, " " + registerModel.toString());
-                Log.i(TAG, " " + registerModel.getAddress().toString());
-                mClient = RetrofitClient.getClient(BASE_URL);
-                mAPIinterface = mClient.create(APIService.class);
-                mAPIinterface.register(registerModel).enqueue(new Callback<User>() {
-                    @Override
-                    public void onResponse(Call<User> call, Response<User> response) {
-                        if (response.code() == 200) {
-                            registerResultCallbacks.onRegisterSuccess();
-                        } else {
+               if(isAllFiled()){
+                   Log.i(TAG, "********************* onRegisterSuccess ");
+                   Log.i(TAG, " " + registerModel.toString());
+                   Log.i(TAG, " " + registerModel.getAddress().toString());
+                   mClient = RetrofitClient.getClient(BASE_URL);
+                   mAPIinterface = mClient.create(APIService.class);
+                   mAPIinterface.register(registerModel).enqueue(new Callback<User>() {
+                       @Override
+                       public void onResponse(Call<User> call, Response<User> response) {
+                           if (response.code() == 200) {
+                               registerResultCallbacks.onRegisterSuccess();
+                           } else {
 
-                            Log.e(TAG, "******** Register Error Response ****************");
-                            Log.e(TAG, "******** " + response.toString());
+                               Log.e(TAG, "******** Register Error Response ****************");
+                               Log.e(TAG, "******** " + response.toString());
 
-                        }
-                    }
+                           }
+                       }
 
-                    @Override
-                    public void onFailure(Call<User> call, Throwable t) {
-                        registerResultCallbacks.onRegisterFailed("Error");
-                        Log.e(TAG, "******** Register Error Response **************** ");
-                        Log.e(TAG, "" + t.getCause());
+                       @Override
+                       public void onFailure(Call<User> call, Throwable t) {
+                           registerResultCallbacks.onRegisterFailed("Error");
+                           Log.e(TAG, "******** Register Error Response **************** ");
+                           Log.e(TAG, "" + t.getCause());
 
-                    }
-                });
+                       }
+                   });
+
+               }else{
+                   registerResultCallbacks.onRegisterFailed("Enter all the values");
+               }
 
 
             }
@@ -87,10 +92,6 @@ public class RegisterViewModel extends BaseViewModel {
 
     @Bindable
     public boolean isAllFieldHasValues() {
-        Log.e(TAG, "********************* isAllFieldHasValues " + registerModel.toString());
-        Log.i(TAG, "********************* isAllFieldHasValues " + registerModel.toString());
-        Log.d(TAG, "********************* isAllFieldHasValues " + registerModel.toString());
-        Log.w(TAG, "********************* isAllFieldHasValues " + registerModel.toString());
 
         if (registerModel.getUsername() == "" || registerModel.getPassword() == "" || registerModel.getGender() == "" || registerModel.getDob() == "" || registerModel.getAddress().getCountryCode() == "" || registerModel.getAddress().getMobileNo() == "" || registerModel.getAddress().getEmail() == "" || registerModel.getPassword() == "") {
             return false;
@@ -186,13 +187,15 @@ public class RegisterViewModel extends BaseViewModel {
         Log.i(TAG, "********************* isAllFieldHasValues " + registerModel.toString());
         Log.d(TAG, "********************* isAllFieldHasValues " + registerModel.toString());
         Log.w(TAG, "********************* isAllFieldHasValues " + registerModel.toString());
-
-        if (registerModel.getUsername() == "" || registerModel.getPassword() == "" || registerModel.getGender() == "" || registerModel.getDob() == "" || registerModel.getAddress().getCountryCode() == "" || registerModel.getAddress().getMobileNo() == "" || registerModel.getAddress().getEmail() == "" || registerModel.getPassword() == "") {
-            return false;
-        } else {
-            return true;
+        if (registerModel != null && registerModel.getUsername() != null) {
+            if (registerModel.getUsername() == "" || registerModel.getPassword() == "" || registerModel.getGender() == "" || registerModel.getDob() == "" || registerModel.getAddress().getCountryCode() == "" || registerModel.getAddress().getMobileNo() == "" || registerModel.getAddress().getEmail() == "" || registerModel.getPassword() == "") {
+                return false;
+            } else {
+                return true;
+            }
         }
 
+        return false;
     }
 
     public void setAllFiled(boolean allFiled) {
