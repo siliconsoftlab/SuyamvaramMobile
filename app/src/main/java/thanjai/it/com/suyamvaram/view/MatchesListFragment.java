@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import thanjai.it.com.suyamvaram.R;
-import thanjai.it.com.suyamvaram.model.UserOld;
+import thanjai.it.com.suyamvaram.model.User;
 
 public class MatchesListFragment extends Fragment {
     private RecyclerView mCrimeRecyclerView;
@@ -36,7 +36,7 @@ public class MatchesListFragment extends Fragment {
            }
 
     private class MatchesHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-       private UserOld mUser;
+       private User mUser;
         private TextView txtView_fname;
         private TextView txtVw_status;
         private TextView txtVw_city;
@@ -54,7 +54,7 @@ public class MatchesListFragment extends Fragment {
             Intent intent=new Intent(getContext(),MatchDetailActivity.class);
             startActivity(intent);
         }
-        public void bind(UserOld user){
+        public void bind(User user){
             mUser=user;
             txtView_fname.setText(mUser.getId()+"");
             txtVw_status .setText("Status");
@@ -64,9 +64,9 @@ public class MatchesListFragment extends Fragment {
     }
     private class MatchesAdapter extends RecyclerView.Adapter<MatchesHolder> {
 
-        private List<UserOld> mMatches;
+        private List<User> mMatches;
 
-        public MatchesAdapter(List<UserOld> users) {
+        public MatchesAdapter(List<User> users) {
             this.mMatches = users;
         }
 
@@ -79,7 +79,7 @@ public class MatchesListFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(MatchesHolder holder, int position) {
-        UserOld user=mMatches.get(position);
+            User user=mMatches.get(position);
         holder.bind(user);
         }
 
@@ -91,8 +91,8 @@ public class MatchesListFragment extends Fragment {
 
     }
     private void updateUI() {
-        UserOld user= new UserOld();
-        List<UserOld> users = new ArrayList<UserOld>();
+        User user= new User();
+        List<User> users = new ArrayList<User>();
         for (int i=0;i<10;i++){
             users.add(user);
         }

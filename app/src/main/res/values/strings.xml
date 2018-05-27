@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Login / Register</string>
+    <string name="app_name">Suyamvaram</string>
     <string name="btn_login_register">Register </string>
     <string name="btn_login_facebook">Register With Facebook</string>
     <string name="btn_login_google">Register With Google</string>

@@ -357,4 +357,29 @@ public class User implements Parcelable
         return  0;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", gender='" + gender + '\'' +
+                ", dob='" + dob + '\'' +
+                ", religion='" + religion + '\'' +
+                ", motherTongue='" + motherTongue + '\'' +
+                ", address=" + address +
+                ", maritalStatus=" + maritalStatus +
+                ", caste=" + caste +
+                ", havingDosham=" + havingDosham +
+                ", currentLocation=" + currentLocation +
+                ", height=" + height +
+                ", physicalStatus=" + physicalStatus +
+                ", education=" + education +
+                ", occupation=" + occupation +
+                ", employedIn=" + employedIn +
+                ", salary=" + salary +
+                ", incomingRequest=" + incomingRequest +
+                ", outgoingRequest=" + outgoingRequest +
+                '}';
+    }
 }

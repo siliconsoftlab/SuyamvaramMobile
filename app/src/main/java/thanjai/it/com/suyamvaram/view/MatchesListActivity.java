@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import thanjai.it.com.suyamvaram.R;
+import thanjai.it.com.suyamvaram.model.User;
 
 public class MatchesListActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -25,6 +26,10 @@ public class MatchesListActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(savedInstanceState !=null)
+        {
+            User user=savedInstanceState.getParcelable("User");
+        }
         setContentView(R.layout.activity_matches_list);
         FragmentManager fm=getSupportFragmentManager();
         Fragment fragment=fm.findFragmentById(R.id.matches_fragment_container);

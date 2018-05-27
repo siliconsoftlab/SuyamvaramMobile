@@ -231,4 +231,21 @@ public class Address implements Parcelable
         return  0;
     }
 
+    @Override
+    public String toString() {
+        return "Address{" +
+                "doorNo='" + doorNo + '\'' +
+                ", street='" + street + '\'' +
+                ", place='" + place + '\'' +
+                ", city='" + city + '\'' +
+                ", district='" + district + '\'' +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", pincode='" + pincode + '\'' +
+                ", email='" + email + '\'' +
+                ", countryCode=" + countryCode +
+                ", mobileNo='" + mobileNo + '\'' +
+                ", whatsappNo='" + whatsappNo + '\'' +
+                '}';
+    }
 }

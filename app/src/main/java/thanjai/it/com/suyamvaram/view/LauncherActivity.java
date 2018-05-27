@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
 
 import thanjai.it.com.suyamvaram.R;
 import thanjai.it.com.suyamvaram.databinding.ActivityLauncherBinding;
@@ -36,8 +34,6 @@ public class LauncherActivity extends AppCompatActivity implements LauncherResul
         LauncherModel launcherModel = new LauncherModel();
         LauncherViewModel launcherViewModel = new LauncherViewModel(launcherModel, this, this);
         activityLauncherBinding.setLauncherModel(launcherViewModel);
-
-
     }
 
     @Override
