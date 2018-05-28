@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,18 +18,25 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.List;
+
 import thanjai.it.com.suyamvaram.R;
 import thanjai.it.com.suyamvaram.model.User;
 
 public class MatchesListActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    private static final String TAG = "MatchesListActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(savedInstanceState !=null)
         {
-            User user=savedInstanceState.getParcelable("User");
+
+            List<User> matches= savedInstanceState.getParcelableArrayList("Matches");
+            Log.d(TAG, "************ MatchesListActivity *************");
+            Log.d(TAG, "************ Size of the macthes "+matches.size());
+            Log.d(TAG, "************ MatchesListActivity *************");
+
         }
         setContentView(R.layout.activity_matches_list);
         FragmentManager fm=getSupportFragmentManager();

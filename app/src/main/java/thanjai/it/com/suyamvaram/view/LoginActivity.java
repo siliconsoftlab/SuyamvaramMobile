@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import thanjai.it.com.suyamvaram.R;
 import thanjai.it.com.suyamvaram.databinding.ActivityLoginBinding;
 import thanjai.it.com.suyamvaram.model.LoginModel;
@@ -35,10 +38,11 @@ public class LoginActivity extends AppCompatActivity implements LoginResultCallb
     }
 
     @Override
-    public void onLoginSuccess(User user) {
+    public void onLoginSuccess(List<User> matches) {
         setProgressBarIndeterminateVisibility(false);
         Intent intent = new Intent(this, MatchesListActivity.class);
-        intent.putExtra("User", user);
+        ArrayList<User> mMatches=new ArrayList<User>(matches);
+        intent.putParcelableArrayListExtra("Matches",mMatches);
         startActivity(intent);
     }
 
